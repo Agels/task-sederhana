@@ -73,7 +73,7 @@ while (die) {
                     alert(`SELAMAT PLAYER 2 ANDA MENANG DENGAN SKOR : ${p2}`)
                 } else {
                     alert('PLAYER 1 DAN PLAYER 2 SAMA KUAT BUNG!');
-                    let die = confirm('mau remat?')
+                    let die = confirm('mau rematch?')
                     if(die){
                         ronde = 1;
                     } else {
