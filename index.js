@@ -19,14 +19,10 @@ while (die) {
     
     const letter = CekValidLetter(player1, player2);
     const valid = CekValidNumber(player1, player2);
-    ronde++;  
-    if (ronde <= 5 ){
-        
-        
-        console.log(letter)
-        console.log(valid)
-        
-        
+    
+    
+   
+    // if (ronde <= 5 ){        
     if(valid === false){
         let die = confirm('ulangi?')
         if(die){
@@ -40,44 +36,50 @@ while (die) {
                 die = false;
             }
         } else {
-            if(player1 === itemx){  
-                alert('player 1 menang');
-                p1 = p1+=1;
-            } else if(player2 === itemx){
-                alert('player 2 menang');
-                p2 = p2+=1;
+            ronde++;  
+            if(ronde <= 5){
+                if(player1 === itemx){  
+                    alert('player 1 menang');
+                    p1 = p1+=1;
+                } else if(player2 === itemx){
+                    alert('player 2 menang');
+                    p2 = p2+=1;
+                } else {
+                    alert('seri');
+                }
+                
+                alert(`      Nilai yang dicari ${itemx}
+                ==========================
+                tebakan player 1 = ${player1} 
+                tebakan player 2 = ${player2}
+                ===========================
+                SKOR SEMENTARA
+                player 1 dengan skor ${p1}
+                player 2 dengan skor ${p2}  `)
+                die = confirm(`ronde ${ronde} `);
             } else {
-                alert('seri');
+                if(p1 > p2){
+                    alert(`SELAMAT PLAYER 1 ANDA MENANG DENGAN SKOR : ${p1}`)
+                } else if(p2 > p1){
+                    alert(`SELAMAT PLAYER 2 ANDA MENANG DENGAN SKOR : ${p2}`)
+                } else {
+                    alert('PLAYER 1 DAN PLAYER 2 SAMA KUAT BUNG!')
+                }
+                    
+                    alert('TQ')
+                    die = false;
             }
-            
-            alert(`      Nilai yang dicari ${itemx}
-            ==========================
-            tebakan player 1 = ${player1} 
-            tebakan player 2 = ${player2}
-            ===========================
-            SKOR SEMENTARA
-            player 1 dengan skor ${p1}
-            player 2 dengan skor ${p2}  `)
-            die = confirm(`ronde ${ronde} `);
+           
         }
     }  
     
-} else {
-    if(p1 > p2){
-        alert(`SELAMAT PLAYER 1 ANDA MENANG DENGAN SKOR : ${p1}`)
-    } else if(p2 > p1){
-        alert(`SELAMAT PLAYER 2 ANDA MENANG DENGAN SKOR : ${p2}`)
-    } else {
-        alert('PLAYER 1 DAN PLAYER 2 SAMA KUAT BUNG!')
-    }
-        
-        alert('TQ')
-        die = false;
-    }
+// } else {
+    
+//     }
 }
 
 
-console.log(ronde)
+//console.log(ronde)
    
 
 function CekValidLetter(player1, player2){
