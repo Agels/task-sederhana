@@ -59,28 +59,41 @@ while (die) {
                 die = confirm(`ronde ${ronde} `);
             } else {
                 if(p1 > p2){
+                    alert(`TOTAL SKOR 
+                        PLAYER 1 : ${p1}
+                        PLAYER 2 : ${p2}
+                    `)
                     alert(`SELAMAT PLAYER 1 ANDA MENANG DENGAN SKOR : ${p1}`)
                 } else if(p2 > p1){
+                    alert(`  TOTAL SKOR
+                            ==================================== 
+                        PLAYER 1 : ${p1}
+                        PLAYER 2 : ${p2}
+                `)
                     alert(`SELAMAT PLAYER 2 ANDA MENANG DENGAN SKOR : ${p2}`)
                 } else {
-                    alert('PLAYER 1 DAN PLAYER 2 SAMA KUAT BUNG!')
+                    alert('PLAYER 1 DAN PLAYER 2 SAMA KUAT BUNG!');
+                    let die = confirm('mau remat?')
+                    if(die){
+                        ronde = 1;
+                    } else {
+                        alert('TQ')
+                        die = false;
+                     
+                    }
+
                 }
-                    
-                    alert('TQ')
-                    die = false;
+                    if(ronde == 1){
+                        ronde = 1;
+                    } else {
+                        alert('TQ')
+                        die = false;
+                    }
             }
            
         }
     }  
-    
-// } else {
-    
-//     }
 }
-
-
-//console.log(ronde)
-   
 
 function CekValidLetter(player1, player2){
 
