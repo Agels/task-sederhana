@@ -2,7 +2,7 @@ alert(` tebak angka 1 - 3
 jika salah satu player menebak dengan benar akan mendapatkan skor
 ronde permainan berjumlah 5
 
-                    GOOD LUCK MATE!!
+GOOD LUCK MATE!!
 `)
 
 let ronde = 1;
@@ -10,7 +10,6 @@ let die = true;
 let p1 = 0;
 let p2 = 0;
 while (die) {
- 
     const items = [1, 2, 3];
     const itemx = items[Math.floor(Math.random()*items.length)];
     
@@ -18,16 +17,16 @@ while (die) {
     const player2  = parseInt(prompt('player 2 : masukan angka'));
     
     
-    if (ronde <= 4 ){
-    let letter = CekValidLetter(player1, player2);
-    let valid = CekValidNumber(player1, player2);
-    
-    
-    console.log(letter)
-    console.log(valid)
-
-
-   
+    const letter = CekValidLetter(player1, player2);
+    const valid = CekValidNumber(player1, player2);
+    ronde++;  
+    if (ronde <= 5 ){
+        
+        
+        console.log(letter)
+        console.log(valid)
+        
+        
     if(valid === false){
         let die = confirm('ulangi?')
         if(die){
@@ -38,7 +37,7 @@ while (die) {
         if(letter === false){
             let die = confirm('ulangi?')
             if(die){
-              die = false;
+                die = false;
             }
         } else {
             if(player1 === itemx){  
@@ -50,7 +49,7 @@ while (die) {
             } else {
                 alert('seri');
             }
-           
+            
             alert(`      Nilai yang dicari ${itemx}
             ==========================
             tebakan player 1 = ${player1} 
@@ -59,25 +58,23 @@ while (die) {
             SKOR SEMENTARA
             player 1 dengan skor ${p1}
             player 2 dengan skor ${p2}  `)
-            ronde++;
             die = confirm(`ronde ${ronde} `);
         }
     }  
-
- } else {
+    
+} else {
     if(p1 > p2){
-            alert(`SELAMAT PLAYER 1 ANDA MENANG DENGAN SKOR : ${p1}`)
-        } else if(p2 > p1){
-            alert(`SELAMAT PLAYER 2 ANDA MENANG DENGAN SKOR : ${p2}`)
-        } else {
-            alert('PLAYER 1 DAN PLAYER 2 SAMA KUAT BUNG!')
-        }
+        alert(`SELAMAT PLAYER 1 ANDA MENANG DENGAN SKOR : ${p1}`)
+    } else if(p2 > p1){
+        alert(`SELAMAT PLAYER 2 ANDA MENANG DENGAN SKOR : ${p2}`)
+    } else {
+        alert('PLAYER 1 DAN PLAYER 2 SAMA KUAT BUNG!')
+    }
         
         alert('TQ')
         die = false;
-   }
-
- }
+    }
+}
 
 
 console.log(ronde)
